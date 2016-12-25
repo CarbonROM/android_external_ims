@@ -14,4 +14,6 @@
 
 LOCAL_PATH := $(call my-dir)
 
-include $(call all-makefiles-under,$(LOCAL_PATH))
+ifneq ($(PREBUILT_EXT_IMS),true)
+  include $(call all-makefiles-under,$(LOCAL_PATH))
+endif
